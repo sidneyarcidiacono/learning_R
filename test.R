@@ -76,3 +76,97 @@ paste("learning", "is", "fun", sep = ".") # paste with sep argument
 # syntax for rep: rep("string to replicate", numTimes)
 
 replicate(3, "learning is fun")
+
+# VECTORS
+
+# creating vectors using the vector() keyword
+vector("numeric", 5) # Numeric vector with 0 at every index
+
+vector("complex", 5) # complex vector with 0+0i at every index
+
+vector("logical", 5) # logical vector with FALSE at every index
+
+vector("character", 5) # character vector with "" at every index
+
+# creating vectors using the c() keyword
+
+myRealNumericVector <- c(1, 2, 3, 4) # numeric
+
+myDecimalNumericVector <- c(1.0, 2.0, 3.0, 4.0) # numeric
+
+myLogicalVector <- c(TRUE, FALSE) # logical
+
+myCharacterVector <- c("a", "b", "c") #character
+
+myIntegerVector <- 1:10 # integer
+
+myComplexVector <- c(1+1i, 2+2i) # complex
+
+
+# Creating a vector with a single element
+
+myVector <- 5
+is.vector(myVector) # check if this is a vector (returns TRUE or FALSE) - this is a built in R function
+length(myVector) # see how many elements are in our vector
+
+# concatenating a vector of strings:
+myVector <- c("learning", "is", "fun")
+paste(myVector, collapse = ".") # the collapse parameter specifies what separator should be used between elements
+
+# overwrite myVector again:
+myVector <- c(1, 2, 3, 4)
+cat("Original vector: ")
+
+myVector <- c(0, myVector)
+cat("Prepending 0 at the start of myVector: ")
+print(myVector)
+
+myVector <- c(myVector, 5)
+cat("Appending 5 at the end of myVector: ")
+print(myVector)
+
+tempVector <- c(6, 7, 8)
+myVector <- c(myVector, tempVector)
+cat("Appending another vector at the end of myVector: ")
+print(myVector)
+
+# Access the first index in myVector:
+print(myVector[1])
+
+# Altering the item at index 1
+myVector[1] <- 2
+
+# LISTS
+
+# Create a list using the list() function:
+myList <- list(1, 1+1i, "a", TRUE)
+is.recursive(myList) # returns TRUE or FALSE
+print(myList)
+
+
+myList <- c("s", myList) # append "s" to start of list
+cat("Prepending s to the start of myList: ")
+print(myList)
+
+# Fetch the first item in myList
+print(myList[1])
+
+# Use double square bracket notation to access element in myList:
+print(myList[[1]])
+
+# Modify the element at index 1:
+myList <- list(, 1+1i, "a", TRUE)
+myList[[1]] <- 100
+print(myList[[1]])
+
+# A list with named elements:
+myList <- list(
+  integerVar = 1:3,
+  numericVar = 0.5,
+  characterVar = c('a', 'b')
+)
+
+# Access named list elements by name:
+print(myList['integerVar']) # prints the name as well as the value
+
+print(myList[['integerVar']]) # prints only the value
