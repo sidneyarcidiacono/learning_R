@@ -170,3 +170,43 @@ myList <- list(
 print(myList['integerVar']) # prints the name as well as the value
 
 print(myList[['integerVar']]) # prints only the value
+
+# Let's make a two dimensional array with one vector.
+myVector <- c(1, 2, 3)
+myArray <- array(myVector, dim=c(3, 1)) # this array has 3 rows and 1 column, and is 3x1
+print(myArray)
+
+# Let's code an array with 3 columns, and 1 row:
+myVector <- c(1, 2, 3) # create our vector
+myArray <- array(myVector, dim=c(1, 3)) # this array has 1 row and 3 columns, and is 1x3
+print(myArray)
+
+# Let's code an array with 2 columns and 2 rows!
+myVector <- c(1, 2, 3, 4)
+myArray <- array(myVector, dim=c(2, 2)) # this array has 2 rows and 2 columns, and is 2x2
+print(myArray)
+
+# Now, let's create an array of two 3x3 matrices!
+myVector1 <- c(1, 2, 3)
+myVector2 <- c(4, 5, 6)
+myVector3 <- c(7, 8, 9)
+
+myArray <- array(c(myVector1, myVector2, myVector3), dim = c(3, 3, 2))
+print(myArray)
+
+# Accessing and modifying arrays:
+myVector1 <- c(1, 2, 3)
+myVector2 <- c(4, 5, 6, 7, 8, 9)
+
+myArray <- array(c(myVector1, myVector2), dim = c(3, 3, 2))
+
+print(myArray[1, 1, 1]) # print element located at row 1, column 1, in the first matrix
+
+print(myArray[2, 3, 2]) # print element located at row 2, column 3, in the second matrix
+
+# We can also provide one single index, and R uses column major order to assign indeces
+myVector <- c("a", "b", "c", "d", "e", "f", "g", "h", "i")
+myArray <- array(myVector, dim = c(3, 3, 1))
+print(myArray[5]) # use column major for accessing this index
+
+# We can also modify items by index the same way

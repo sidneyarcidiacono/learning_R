@@ -155,3 +155,19 @@ myList <- list(
 Entries in named lists can be accessed by their name rather than their index, as well.
 
 ### Arrays
+
+We just learned about vectors & lists in R. R also has *arrays*.
+
+While both lists and vectors in R are one dimensional, (having length and no other dimension), arrays in R can be **multi-dimensional**.
+
+In R, you can create arrays using the array() keyword. Inputs to array() include concatenated vectors, and the *dim* argument for creating an array.
+
+array(<dataVectors>, dim = <numOfDimensions>)
+
+Optionally, we can also provide names for each dimension!
+
+The dimensions of the array we made on lines 174 - 177 in test.R are 3x1, where 3 is the number of rows and 1 is the number of columns. This is also called a *single column matrix*.
+
+Notice the row and column labels when we call print() on our array.
+
+![Array output example from R course]('arrayOutput.png')
