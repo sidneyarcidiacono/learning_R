@@ -210,3 +210,35 @@ myArray <- array(myVector, dim = c(3, 3, 1))
 print(myArray[5]) # use column major for accessing this index
 
 # We can also modify items by index the same way
+
+# MATRICES
+
+# We can create a matrix using the matrix() function:
+# we set nrow and ncol arguments to specify the # of rows and columns
+# let's create first an empty matrix
+myMatrix <- matrix(nrow = 2, ncol = 2)
+print(myMatrix) # prints a 2x2 matrix with NA in place of values
+
+# let's use a populated vector to create a matrix
+myVector <- c(1, 2, 3, 4)
+myMatrix <- matrix(myVector, nrow = 2, ncol = 2)
+print(myMatrix) # prints the matrix with myVector's elements, arranged column-wise
+
+# let's play with the matrix() function
+myMatrix <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+print(myMatrix) # prints a 3 x 4 matrix with 1 - 12 arranged by row
+
+# we can also set the names of rows and columns:
+rownames <- c("r1", "r2", "r3", "r4")
+colnames <- c("c1", "c2", "c3")
+myMatrix <- matrix(c(1:12), nrow = 4, ncol = 3, byrow = TRUE, dimnames = list(rownames, colnames))
+print(myMatrix) # prints same matrix as above, but now our output includes our row and column labels instead of the default # labels
+
+# let's access an element of our matrix
+myMatrix <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+print(myMatrix[2, 3]) # prints 6 which is our element in row 2, col 3
+
+# we can change the value of an element by accessing it and re-assigning it with =
+myMatrix <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+myMatrix[2, 3] = 0
+print(myMatrix[2, 3]) # prints 0

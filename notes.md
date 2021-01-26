@@ -171,3 +171,21 @@ The dimensions of the array we made on lines 174 - 177 in test.R are 3x1, where 
 Notice the row and column labels when we call print() on our array.
 
 ![Array output example from R course]('arrayOutput.png')
+
+### Matrices
+
+Matrices are objects in R where elements are arranged in a **two-dimensional** rectangular layout. Like arrays, they contain elements of the same data type.
+
+**Why do we need matrices if we have arrays?**
+
+Matrices in R are only two-dimensional. A matrix is just a more convenient constructor. There are many mathematical and statistical functions and methods that only accept 2D arrays. So, to ensure the programmer doesn't make the mistake of making the 2D array an nD array, a convenient object specifically for this task is used (our matrix).
+
+Syntax:
+
+matrix(data, nrow, ncol, byrow, dimnames)
+
+Here, *data* is the input vector, *ncol* is the number of columns to be created, *nrow* is the number of rows to be created, *byrow* is a logical clue which if set to TRUE arranges elements row-wise, and *dimnames* is the argument that allows us to set names for the rows and columns.
+
+**Accessing and manipulating matrices**
+
+Elements of a matrix can be accessed and updated by using the row and column index of the element inside square brackets []. See in test.R
