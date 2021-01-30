@@ -1,3 +1,5 @@
+# THE BASICS - DATA TYPES, AND BASIC DATA STRUCTURES IN R
+
 # This is a comment in R
 print("Hello World!", quote = FALSE)
 
@@ -300,3 +302,20 @@ capitalAlphabet <- data.frame(myNewKey, capitalLetter)
 
 merge(smallAlphabet, capitalAlphabet, by.x = "myKey", by.y = "myNewKey")
 # This creates a new dataframe with columns myKey, smallLetter, and capitalLetter
+
+# FACTORS
+
+# Let's create a factor for our marriage status example!
+maritalStatus <- c("Single", "Married", "Separated", "Divorced", "Widowed")
+myFactor <- factor(maritalStatus)
+print(myFactor) # output: our vector and Levels: <labels>
+
+# We can check if a variable is a factor by the function is.factor()
+cat("The variable maritalStatus is a factor: ", is.factor(maritalStatus), "\n") # returns FALSE
+cat("The variable myFactor is a factor: ", is.factor(myFactor), "\n") # returns TRUE
+
+# Knowing that R stores factors as integer vectors, we can demonstrate that by using typeof()
+typeof(myFactor) # returns "integer"
+
+# We can access & manipulate factors the same way we do vectors:
+print(myFactor[1]) #output: Single

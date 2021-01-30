@@ -223,3 +223,23 @@ By default, the data frames are merged on the columns which names they both have
 *We use by.x or by.y only when the names of the columns are different and we have to choose the ones on which merging should take place.*
 
 Check out the example of merge() in test.R!
+
+## Factors
+
+## What is a factor?
+
+A factor is a data structure in R used to categorize data. By categorizing data, we mean fields that only take predefined, a limited number of, or finite number of values (**categorical variables**).
+
+For example, the marital status of a person can be the following:
+
+- Married
+- Single
+- Divorced
+- Separated
+- Widowed
+
+Here, we know that the possible values for marital status are 5. These values are predefined, distinct, and called **levels**.
+
+Factors can be created using the factor() function. This function takes all **levels** in the form of a vector. See test.R!
+
+Factors are closely related to vectors. i.e: factors are stored as integer vectors, meaning: *R records the data in the vector as integers and stores the result in an integer vector*. 
