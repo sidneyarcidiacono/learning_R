@@ -242,3 +242,61 @@ print(myMatrix[2, 3]) # prints 6 which is our element in row 2, col 3
 myMatrix <- matrix(c(1:12), nrow = 4, byrow = TRUE)
 myMatrix[2, 3] = 0
 print(myMatrix[2, 3]) # prints 0
+
+# Creating a data frame:
+myDataFrame <- data.frame(foo = c(10, 20, 30, 40, 50), bar = c(T, F, T, F, T))
+print(myDataFrame) # prints labeled columns foo and bar and labeled positions for the rows
+
+# We can find the number of rows and columns associated with a data frame with nrow() and ncol()
+myDataFrame <- data.frame(foo = c(1, 2, 3, 4, 5), bar = c(T, F, T, F, T))
+cat("Number of rows: ", nrow(myDataFrame), "\n") # prints Number of rows: 5
+cat("Number of columns: ", ncol(myDataFrame), "\n") # prints Number of columns: 2
+
+# Let's look at the dataframe containing employee data:
+# Create name, address, phone number and gender variables
+name <- c("Alex", "Brian", "Charles")
+address <- c("California", "NewYork", "Boston")
+phonenumber <- c(2025550167, 2025354137, 2025339164)
+gender <- c('F', 'M', 'M')
+
+employeeDataFrame <- data.frame(name, address, phonenumber, gender)
+print(employeeDataFrame) # prints data frame with above created rows
+
+# What if we want to access the phone number of the first employee?
+employeeDataFrame[1,3] # fetching the first row's third column: output is [1] 2025550167
+
+# what if we want to access the entire second row?
+# we can do this using square brackets without a column number, like This
+employeeDataFrame[2,] # output: 2 Brian NewYork 2025354137 M with column labels
+
+# what if we want one specific column, like all of the phone numbers?
+employeeDataFrame[,3] # outputs phone numbers
+
+# We can also select the columns with their names
+employeeDataFrame[,c('name', 'phonenumber')] # outputs columns name and phonenumber for employees
+
+# or, we can use the $ sign to fetch a specific column, like this:
+# <source>$<nameOfColumn>
+employeeDataFrame$name # outputs name column
+# Notice that the line: Levels: Alex Brian Charles is printed
+# A DF has unique row names because character vectors passed to a DF are converted to factors
+# We'll get into these more later
+
+# Let's try out merge()!
+idNum <- c(11, 22, 33)
+employeeCardNumber <- data.frame(name, idNum)
+
+merge(employeeCardNumber, employeeDataFrame) # results in a data frame that looks like
+# employee dataframe but which also contains an idNum column containing their idNums
+
+# What if the column names aren't the same?
+myKey <- c("Alphabet a", "Alphabet b", "Alphabet c")
+smallLetter <- c("a", "b", "c")
+smallAlphabet <- data.frame(myKey, smallLetter)
+
+myNewKey <- c("Alphabet a", "Alphabet b", "Alphabet c")
+capitalLetter <- c("A", "B", "C")
+capitalAlphabet <- data.frame(myNewKey, capitalLetter)
+
+merge(smallAlphabet, capitalAlphabet, by.x = "myKey", by.y = "myNewKey")
+# This creates a new dataframe with columns myKey, smallLetter, and capitalLetter

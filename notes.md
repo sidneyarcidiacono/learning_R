@@ -189,3 +189,37 @@ Here, *data* is the input vector, *ncol* is the number of columns to be created,
 **Accessing and manipulating matrices**
 
 Elements of a matrix can be accessed and updated by using the row and column index of the element inside square brackets []. See in test.R
+
+### Data Frames
+
+Data frames are a super useful tool in R - basically, they're used to store **tabular data** in R. Data frames store data in a sequence of columns. Each column can be of a different data type.
+
+In matrices, all of the items are of the same type. However, in a data frame, you can store objects of different types. So, if you want to store data of an employee, you can store their identification number, phone number, name, and address, you can!
+
+To create a data frame, you pass vectors of the same length to the data.frame() function!
+
+See test.R for some data frame methods and how to create one!
+
+We can't use cat() for printing a data frame because cat() is used for objects containing only single data types. If we try to use cat() on a data frame, the compiler will throw an error.
+
+What if we need to merge two different data frames with related information, and both have a column that has identical values?
+
+For example: you have an employee data frame, like in test.R, but you have another data frame that contains the employee names and their ids.
+
+You can do this using the merge() function.
+
+Syntax for merge:
+
+```R
+merge(x, y, by.x, by.y, sort = TRUE)
+```
+
+Here, the parameters x and y are the two data frames we want to merge.
+by.x and by.y provide the specifications of the columns through which merging will take place.
+the sort parameter tells whether the result should be sorted on the specified column
+
+By default, the data frames are merged on the columns which names they both have, but separate specifications can be given by by.x and by.y.
+
+*We use by.x or by.y only when the names of the columns are different and we have to choose the ones on which merging should take place.*
+
+Check out the example of merge() in test.R!
