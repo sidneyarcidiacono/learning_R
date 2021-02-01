@@ -269,4 +269,6 @@ There are four categories of operators in R:
 
 %% -> Modulus
 
-%/% -> Integer division 
+%/% -> Integer division
+
+If we perform operations between vectors of the same length, the result is another vector! We can also perform operations between a vector and a single number - in which case, the number acts on each element in the vector. However, we can't operate between vectors of different lengths - the compiler will throw an error.
