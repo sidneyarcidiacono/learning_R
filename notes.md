@@ -242,4 +242,31 @@ Here, we know that the possible values for marital status are 5. These values ar
 
 Factors can be created using the factor() function. This function takes all **levels** in the form of a vector. See test.R!
 
-Factors are closely related to vectors. i.e: factors are stored as integer vectors, meaning: *R records the data in the vector as integers and stores the result in an integer vector*. 
+Factors are closely related to vectors. i.e: factors are stored as integer vectors, meaning: *R records the data in the vector as integers and stores the result in an integer vector*.
+
+## Operators
+
+R has many **operators** that carry out different arithmetic and logical operations. An operator is a symbol that guides the compiler to perform specific arithmetic or logical manipulations.
+
+There are four categories of operators in R:
+
+1. Arithmetic
+2. Logical
+3. Relational
+4. Assignment
+
+### Arithmetic Operators:
+
++ -> Addition
+
+- -> Subtraction
+
+/ -> Division
+
+* -> Multiplication
+
+^ -> Exponent
+
+%% -> Modulus
+
+%/% -> Integer division 
