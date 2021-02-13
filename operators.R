@@ -69,3 +69,68 @@ myVector %% number # 2 1 0
 
 # Integer Division:
 myVector %/% number # 1 3 5
+
+# Using R's relational operators on a vector
+# R will do element-wise comparisons
+
+vector1 <- c(5, 10, 15)
+vector2 <- c(3, 6, 9)
+
+# Equal to
+vector1 == vector2 # ouput: FALSE FALSE FALSE
+
+# Not equal to
+vector1 != vector2 # output: TRUE TRUE TRUE
+
+# Less than
+vector1 < vector2 # output: FALSE FALSE FALSE
+
+# Less than equal to
+vector1 <= vector2 # output: FALSE FALSE FALSE
+
+# Greater than
+vector1 > vector2 # output: TRUE TRUE TRUE
+
+# Greater than equal to
+vector1 >= vector2 # output: TRUE TRUE TRUE
+
+# Using R's %in% operator:
+
+myVector <- c(5, 3, 15)
+number <- 3
+
+number %in% myVector # output: TRUE
+
+# If the vector on the lefthand side has multiple elements,
+# Each element is searched in the vector on the right side.
+# Individual TRUE or FALSE values are produced as a result
+
+vector1 <- c(5, 3, 15)
+vector2 <- c(3, 10)
+
+vector2 %in% vector1 # 3 is present in vector1 but 10 is not present in vector2
+
+# The output of the above would be: TRUE FALSE
+
+# LOGICAL OPERATORS IN R
+
+number1 <- 10
+number2 <- 3
+
+number1 & number2 #output: TRUE
+
+number1 && number2 #output: TRUE
+
+number1 | number2 #output: TRUE
+
+number1 || number2 #output: TRUE
+
+!number1 #output FALSE
+
+xor(number1, number2) # output: FALSE
+
+# If we want to check if a number: testVariable is greater than 4 and less than 10:
+
+testVariable <- 19
+
+cat(testVariable > 4 && testVariable < 10)

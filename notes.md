@@ -272,3 +272,63 @@ There are four categories of operators in R:
 %/% -> Integer division
 
 If we perform operations between vectors of the same length, the result is another vector! We can also perform operations between a vector and a single number - in which case, the number acts on each element in the vector. However, we can't operate between vectors of different lengths - the compiler will throw an error.
+
+What if we want to solve:
+
+2 + 4 * 9 - 8?
+
+We need to keep in mind operator precedence. (PEMDAS!) The R compiler handles this for us, so we don't have to think too hard about it.
+
+### Relational Operators:
+
+Relational operators are used for comparing objects. They return a boolean value: TRUE or FALSE.
+
+== -> equal to
+
+!= -> not equal to
+
+< -> less than
+
+'>' -> greater than
+
+<= less than or equal to
+
+'>=' -> greater than or equal to
+
+If you use a relational operator to compare vectors, R will do an element-wise comparison.
+
+**The %in% operator**
+
+The %in% operator is only used on vectors but is the only operator which does not do normal element-wise execution.
+
+%in% checks whether the value(s) on the left side are present on the right side. This means %in% tests whether each value on the left is somewhere in the vector on the right.
+
+*When using relational operators, if the two vectors are of unequal length, R tries to equalize them by replicating the smaller one*.
+
+### Logical Operators:
+
+Logical operators are used for carrying out Boolean operations like AND, OR, etc. Such operators compile the results of multiple logical tests into TRUE or FALSE.
+
+The following are the logical operators in the R language:
+
+& -> element wise logical AND
+
+&& -> logical AND
+
+| -> element wise logical OR
+
+|| -> logical OR
+
+! -> NOT
+
+xor -> XOR
+
+**R's relational operators have a higher precedence than R's logical operators, so the relational operator (>, <, etc.) will be executed first, and then the logical operator will be evaluated.**
+
+## Conditional Statements
+
+### if Statments:
+
+Conditional statements are used to perform different computations or actions depending on if a condition is or is not met.
+
+An *if statement* consists of a Boolean expression that when satisfied performs specific actions.
