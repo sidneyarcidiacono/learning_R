@@ -332,3 +332,29 @@ xor -> XOR
 Conditional statements are used to perform different computations or actions depending on if a condition is or is not met.
 
 An *if statement* consists of a Boolean expression that when satisfied performs specific actions.
+
+*if statements* in R are very similar to just about every other language I know.
+
+However, R has an ifelse() function that's a bit different. ifelse() takes:
+
+ifelse(expression, condition1, condition2)
+
+For example, if we want to print "even" for even numbers, and "odd" for odd numbers, we would do the following:
+
+```R
+ifelse(x %% 2 == 0, "even", "odd")
+```
+
+### Switch Statements:
+
+A switch statement is a conditional statement that allows a variable to be tested for equality against a list of values. Each value is called a case.
+
+Switch statements basically provide decision making capability: choose an option corresponding to the expression.
+The options are chosen based on two criteria of the options:
+
+1. Based on index - choose the option whose index corresponds to the value of the expression
+2. Based on matching value - choose the option which is an exact match of the expression
+
+The syntax is as follows:
+
+switch(expression, case1, case2, case3, ....) 

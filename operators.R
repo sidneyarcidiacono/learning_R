@@ -134,3 +134,106 @@ xor(number1, number2) # output: FALSE
 testVariable <- 19
 
 cat(testVariable > 4 && testVariable < 10)
+
+## IF/ELSE
+
+x <- 5
+
+if (x > 0) # condition checking if x is a positive number
+{
+  print("Positive number")
+} else
+{
+  print("Negative number")
+}
+
+# Check if testNumber is in myVector
+
+myVector <- c(1, 2, 3, 4)
+testNumber <- 4
+
+if (!testNumber %in% myVector)
+{
+  print("Not found!")
+} else
+{
+  print("Found!")
+}
+
+# Nesting if...else statements
+
+age <- 22
+validID <- TRUE
+
+if (age >= 18)
+{
+  if (validId)
+  {
+    cat("Voting is allowed")
+  } else
+  {
+    cat("Voting not allowed")
+  }
+} else
+{
+  cat("Voting not allowed")
+}
+
+# Foo, bar with R!
+# If the number is a multiple of three, print "foo", if the number is a multiple of 5, print "bar" and print "foo bar"
+# if it's a multiple of 3 and 5!
+
+num1 <- 3
+num2 <- 6
+num3 <- 10
+num4 <- 15
+
+if (n %% 3 == 0)
+{
+  if (n %% 5 == 0)
+  {
+    print("foo bar")
+  } else
+  {
+    print("foo")
+  }
+} else
+{
+  if (n %% 5 == 0)
+  {
+    print("bar")
+  }
+}
+
+## R also has an ifelse() method that we can pass multiple arguments that coerce to booleans
+# and ifelse() will always return a vector
+
+# ifelse(expression, condition1, condition2)
+
+# expression is a statement which can be coerced to logical mode
+# condition1 and condition2 will return TRUE if it satisfies expression and FALSE if not
+# output: [TRUE, FALSE]
+# You always pass ifelse a vector and two conditions
+
+x <- c(5, -5)
+ifelse(x > 0, "positive", "negative") # if the expression is satisfied return condition1 else return condition2
+
+## SWITCH STATEMENTS
+# switch(expression, case1, case2...)
+
+switch(2, "circle", "square", "triangle")  # Output "Square" because we match the index of value 'square'
+
+# Another case where we match on index
+
+input <- 3
+ouput = switch(input, "Morning", "Afternoon", "Evening", "Night")
+print(output) # Output = "Evening"
+
+# And a case where we match on values:
+
+input = "E"
+output = switch(input, "M" = "Morning",
+                       "A" = "Afternoon",
+                       "E" = "Evening",
+                       "N" = "Night")
+print(output) # Output = "E"
