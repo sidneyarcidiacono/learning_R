@@ -420,3 +420,54 @@ The repeat loop runs as long as it is not broken explicitly.
 Check out an example in loops.R!
 
 *Quick note: the break statement works in for and while loops in R as well!*
+
+### Functions
+
+Similarly to some other programming languages, functions are objects in R.
+
+A function in R is created by using the 'function' keyword. Let's take a look at the syntax:
+
+```R
+functionName <- function(argument1, argument2, ...)
+{
+  # Statements
+}
+```
+
+Components of a function:
+
+*functionName* - this is the name of the function, and is stored as an object in R
+
+*arguments* - We can pass data, inputs to the function. These are optional.
+
+*statements* - These are the function's body, they define what the function does.
+
+*output* - the return value of a function.
+
+Types of functions:
+
+*Built-in* - Build in R functions are pre-defined for us within the R language, and include many we've already been using such as ```cat()``` ```print()``` and ```length()```.
+
+*User-defined* - These are functions we define ourselves with our own custom functionality. Functions are used to encapsulate code that we're likely to need to use multiple times in our program.
+
+**Returning from a function**
+
+We don't always just want our function to print something, because often we need to use the result. For this, we'll want to *return* something.
+
+R has a *return()* method for this.
+
+Syntax:
+
+```R
+return(expression)
+```
+
+The value returned from a function can be any valid object.
+
+Okay, but there's a catch. R is a little weird and we don't NEED to specify a return statement.
+
+**By default, R will return the result of the last expression in any given function**
+
+Look back at functions.R for an example.
+
+**Processing Lists and Vectors** 
