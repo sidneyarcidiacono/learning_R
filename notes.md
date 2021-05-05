@@ -527,3 +527,27 @@ Each recursive function has two parts:
 *Base Case*: The base case is where the call to function stops, i.e., it does not make any more recursive calls.
 
 *Recursive Case*: The recursive case is where the function calls itself again and again until the base case is met.
+
+### Getting user input from the keyboard:
+
+There are a few different ways to grab user input. First, let's take a look at the readLines() method:
+
+The ```readLines()``` function takes user input - referred to as the STDIN file in R. First, we fetch the file using:
+
+```R
+input <- file("stdin")
+```
+
+Then, use the function readLines():
+
+```R
+UserInput <- readLines(input, <numberOfInputs>)
+# Here, the variable UserInput is a list, and each of its elements can be accessed
+# using square brackets
+```
+
+*Note:* The input taken from STDIN is always type string.
+
+*Note:* The core strength of an R application is the ability to manipulate large chunks of data. Such data cannot be easily entered by the user, therefore, **external files** are used to pass large chunks of data to an R program. Such a method is more efficient and easy to use.
+
+### Handling .txt files:
