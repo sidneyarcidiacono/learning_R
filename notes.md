@@ -470,4 +470,60 @@ Okay, but there's a catch. R is a little weird and we don't NEED to specify a re
 
 Look back at functions.R for an example.
 
-**Processing Lists and Vectors** 
+**Processing Lists and Vectors**
+
+If we take a vector or list as input, we change our example function (in functions.R) slightly to iterate over each element we receive as input.
+
+**Returning multiple values in R**
+
+Say for our maxNumber function, we now want to return both the max and the min. We can store both of these in a list
+and return the list!
+
+**Nested Functions**
+
+What is a nested function?
+
+Sometimes, we might need to use another function in a current function. This is called nested functions: using a *user-defined* function in another *user-defined* function.
+
+This would look something like this:
+
+```R
+myFunction <- function(arg1, arg2)
+{
+  # statements
+}
+
+myFunction2 <- function(arg1, arg2)
+{
+  myFunction(arg1, arg2)
+  # ...
+}
+```
+
+We can also define one function within another function and use it there, too!
+
+```R
+function1 <- function(arg1, arg2)
+{
+  function2 <- function(arg1)
+  {
+    # Statements
+  }
+  # Using the created function
+  function2(arg1)
+}
+```
+
+### Recursion
+
+What is a recursive function?
+
+A recursive function is one where we call the function itself from inside the function body. Recursion allows the function to execute several times, collecting the result at the end of each iteration.
+
+**Components**:
+
+Each recursive function has two parts:
+
+*Base Case*: The base case is where the call to function stops, i.e., it does not make any more recursive calls.
+
+*Recursive Case*: The recursive case is where the function calls itself again and again until the base case is met.
