@@ -335,6 +335,8 @@ An *if statement* consists of a Boolean expression that when satisfied performs 
 
 *if statements* in R are very similar to just about every other language I know.
 
+*else if* in R is "else if" similar to JavaScript.
+
 However, R has an ifelse() function that's a bit different. ifelse() takes:
 
 ifelse(expression, condition1, condition2)
@@ -357,4 +359,64 @@ The options are chosen based on two criteria of the options:
 
 The syntax is as follows:
 
-switch(expression, case1, case2, case3, ....) 
+switch(expression, case1, case2, case3, ....)
+
+### Loops
+
+Loops execute some code while some condition is true.
+
+One example of a *while* loop in R:
+
+```R
+myNumber <- 1
+
+while(myNumber <= 10)
+{
+  print(myNumber)
+  myNumber = myNumber + 1
+}
+```
+
+The syntax of a *for* loop in R is as follows:
+
+```R
+for (value in vector)
+{
+  statements
+}
+```
+
+For loops can be used on lists, as well as matrices. This will also give us an idea of *nested* for loops.
+
+Consider the following example:
+
+```R
+myMatrix <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+
+for (r in 1:nrow(myMatrix)) {
+  for (c in 1:ncol(myMatrix))
+  print(paste("Row", r, "and column", c, " = ", myMatrix[r, c]))
+}
+```
+
+R also has something called a **repeat loop**. The syntax for the repeat loop is as follows:
+
+```R
+repeat
+{
+  statement
+
+  if (something is true)
+  {
+    break
+  }
+}
+```
+
+In the statement block, we must use the "break" statement to exit the loop.
+
+The repeat loop runs as long as it is not broken explicitly.
+
+Check out an example in loops.R!
+
+*Quick note: the break statement works in for and while loops in R as well!*
