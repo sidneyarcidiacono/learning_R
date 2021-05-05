@@ -551,3 +551,38 @@ UserInput <- readLines(input, <numberOfInputs>)
 *Note:* The core strength of an R application is the ability to manipulate large chunks of data. Such data cannot be easily entered by the user, therefore, **external files** are used to pass large chunks of data to an R program. Such a method is more efficient and easy to use.
 
 ### Handling .txt files:
+
+**Steps to take input from a file**:
+
+1. We need to specify the file name and path in the local filesystem. If the file is in the same directory as the R program, then just the file name is enough.
+
+```R
+fileData <- file(path, open="r")
+
+## Path is the location of the file plus its name
+## open="r" specifies  that we'd like to open the file in read mode.
+```
+
+2. In the next step, we fetch all the data from the file. In this case, we fetch data from fileData (the variable in which we stored the result of opening the file). For this purpose, we again use the function ```readLines()```. The syntax is:
+
+```R
+lines <- readLines(fileData)
+```
+
+3. Now that all the lines of the file are stored in the variable ```lines```, we can perform any calculation or task on this data.
+
+Let's look at the complete code for reading in the data from a .txt file and displaying its contents on the screen:
+
+```R
+path <- "data.txt"  # The path to the file we want to open. In this example, it's in the same directory as our program.
+
+fileData <- file(path, open="r")  # open the file
+lines <- readLines(fileData)  # read all the lines of the file.
+
+for (l in lines)  # iterate over all the lines - remember that readLines stores a list.
+{
+  print(l)
+}
+```
+
+Remember that **by default - everything we input from a file is type string. This means that should we need to perform calculations on numbers, we'll need to use our as.Integer or other methods to parse them as such.**
