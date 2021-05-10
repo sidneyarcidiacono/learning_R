@@ -586,3 +586,17 @@ for (l in lines)  # iterate over all the lines - remember that readLines stores 
 ```
 
 Remember that **by default - everything we input from a file is type string. This means that should we need to perform calculations on numbers, we'll need to use our as.Integer or other methods to parse them as such.**
+
+#### Outputting data to a file:
+
+While handling data, we might want to output large quantities of data as well as read it in or do something with it. We might want to store this data for future use, or use it as input for another program.
+
+**Steps for Outputting Data to a File:**
+
+1. Find the path of the file that needs to be written
+
+2. Now, use the write() function to write data, which is the counterpart of the readLines() function. The first argument to the write() function is the *data* and the second is the filepath. So, the syntax is like so:
+
+```R
+write(<dataToBeWritten>, <pathOfFile>)
+```
