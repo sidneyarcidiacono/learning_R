@@ -600,3 +600,23 @@ While handling data, we might want to output large quantities of data as well as
 ```R
 write(<dataToBeWritten>, <pathOfFile>)
 ```
+
+### Handling CSV Files:
+
+What is a CSV?
+
+It's basically like an ordinary txt file, but stands for 'comma separated values' and has the .csv extension. It always will use *special characters* (not alphanumeric characters) as separators for columns.
+
+**Taking input from a CSV**
+
+We can do this easily by using the:
+
+```R
+read.csv(filePath)
+```
+
+read.csv() function. This function take a file path, as shown above.
+
+**What's the Data Type of input from a CSV?**
+
+The data we receive from a csv can be described best as a table. Therefore, the compiler stores this data as a *data frame*. We can use the class() function to confirm this.

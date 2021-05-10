@@ -52,3 +52,8 @@ result <- Sum(myVector) # Now, we store the result of calling this function in a
 
 outputFile <- "output/outData.txt" # The file path to write to
 write(result, outputFile) # Write takes arguments: write(data, filepath)
+
+## Let's now take some data in from a csv file!
+
+csvData <- read.csv("data.csv")
+print(csvData)
