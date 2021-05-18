@@ -621,4 +621,94 @@ read.csv() function. This function take a file path, as shown above.
 
 The data we receive from a csv can be described best as a table. Therefore, the compiler stores this data as a *data frame*. We can use the class() function to confirm this.
 
-We can also output a dataframe to a .csv file. 
+We can also output a dataframe to a .csv file.
+
+### Exception Handling
+
+We want to ensure that any time we encounter an error or an unexpected problem, we handle it gracefully so that we don't crash or otherwise interrupt the flow of our program.
+
+Exception handling involves first anticipating the error, detecting it, and then resolving it in the program.
+
+    Anticipation => Detection => Resolution
+
+Anticipation means that we can evaluate our program and consider where something might go wrong. This might mean considering handling edge cases or invalid inputs. Once we've done that, we want to be sure that we consider how to handle this situation such that we don't crash our program or interrupt its flow (i.e: not let the compiler throw unexpected errors).
+
+*Error handlers* are special programs that help forestall errors. They recover from errors that occur without terminating the program abruptly, or if all else fails, gracefully ending an affected application.
+
+The execution of an R script can be affected by the following R signals:
+
+- Warnings
+- Errors
+- Info messages
+- User requested interrupts (By hitting CTRL + C, BRK or ESC)
+
+**Errors**:
+
+Errors occur whenever a programmer attempts to do something that isn't allowed. For instance, attempting to perform arithmetic between objects of different types:
+
+```R
+"a" + 1
+```
+
+The compiler will throw an error here.
+
+**Warnings**:
+
+Some warning messages caution users without terminating the execution of the program. It means *although I can and will give you an answer, there might be an issue with your inputs. Therefore, computation might be flawed.*
+
+For example, while creating a matrix that has a vector of numbers whose length is not a sub-multiple or a multiple of the number of rows:
+
+```R
+myMatrix <- matrix(c(1:10), nrow = 4, byrow = TRUE)
+print(myMatrix)
+```
+
+You'll get the following warning here because we have a vector of length 10 and 4 rows. 10 numbers are not easily mapped to 4 rows, although it is possible. So, the compiler will create this matrix, but give you a warning:
+
+![warning when creating a matrix with a vector which is not a multiple or sub-multiple the # of rows]("warning.png")
+
+**So, now that we know what we're doing, how do we add it into our code?**
+
+Try, Catch:
+
+What are try, catch in the R language?
+
+*try* is a keyword that represents the handling of exceptions caused by errors or warnings during the execution of code. Using *try* we can avoid the unwanted termination of code abruptly, however, the error message is still displayed.
+
+Syntax for try:
+
+```R
+try(<exceptionCause>)
+## Pass 'try' the object that might throw exception
+```
+
+If we *don't* want to show the compiler error, but rather, some specific notification, we can use the *catch* block.
+
+```zsh
+A try block is the block of code in which exceptions occur and the catch block catches and tries to handle the try block exception
+```
+
+Syntax for try, catch():
+
+```R
+result <- tryCatch(
+  {
+    expression
+  },
+  warning = function (w)
+  {
+    warningHandlerCode
+  },
+  error = function (e)
+  {
+    errorHandlerCode
+  },
+  finally = {
+    cleanup code
+  }
+)
+```
+
+The first parameter is the expression or the object that might throw the warning. The second and third parameter involves the resolution of the error/warning depending on the type of message thrown. *error* is evaluated when an error occurs, and *warning* is evaluated when a warning occurs.
+
+The last parameter, *finally* is an expression that is evaluated before returning or exiting the *tryCatch()* block. *finally* is always executed, irrespective of whether an error/warning is thrown or not. We may or may not include this as needed. 
