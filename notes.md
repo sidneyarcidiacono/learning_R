@@ -620,3 +620,5 @@ read.csv() function. This function take a file path, as shown above.
 **What's the Data Type of input from a CSV?**
 
 The data we receive from a csv can be described best as a table. Therefore, the compiler stores this data as a *data frame*. We can use the class() function to confirm this.
+
+We can also output a dataframe to a .csv file. 

@@ -57,3 +57,26 @@ write(result, outputFile) # Write takes arguments: write(data, filepath)
 
 csvData <- read.csv("data.csv")
 print(csvData)
+
+# Now, since we know that the compiler saves this as a dataframe, we can perform manipulations on it
+# as usual.
+
+maximumMarks <- max(csvData$Marks) # Here, we acces the marks column with the syntax csvData$Marks
+print(maximumMarks)
+
+## Revisit creating dataFrames:
+
+myDataFrame <- data.frame(foo = c(1, 2, 3, 4, 5), bar = c(T, F, T, F, T)) # foo and bar name their respective columns and act as headers
+print(myDataFrame)
+
+# Output:
+# foo bar
+# 1   TRUE
+# 2   FALSE
+# 3   TRUE
+# ...
+
+## Now, let's modify the above code so that we write a csv with some data:
+# we'll need the function write.csv(). It takes the data to be written and the file path as arguments
+
+write.csv(myDataFrame, "output/outMyDataFrame.csv")
