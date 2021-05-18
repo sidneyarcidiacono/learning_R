@@ -711,4 +711,43 @@ result <- tryCatch(
 
 The first parameter is the expression or the object that might throw the warning. The second and third parameter involves the resolution of the error/warning depending on the type of message thrown. *error* is evaluated when an error occurs, and *warning* is evaluated when a warning occurs.
 
-The last parameter, *finally* is an expression that is evaluated before returning or exiting the *tryCatch()* block. *finally* is always executed, irrespective of whether an error/warning is thrown or not. We may or may not include this as needed. 
+The last parameter, *finally* is an expression that is evaluated before returning or exiting the *tryCatch()* block. *finally* is always executed, irrespective of whether an error/warning is thrown or not. We may or may not include this as needed.
+
+**Other built-ins**:
+
+R has some other built ins for exception handling. Here's an initial list, although this is just an intro:
+
+- *warning()* to generate warnings
+- *stop()* to generate errors
+- *suppressWarnings(expression)* to evaluate the given expression and ignore any warnings
+- *tryCatch()* which we've seen above.
+
+**Warning()**:
+
+The function *warning()* generates a warning message specified by the programmer.
+
+**Stop()**:
+
+The function *stop()* generates errors. This will halt the execution of the code. This function is useful if we want the code to be error free - if we want to force the code to only execute when it completely meets our expectations, we can use this function.
+
+**suppressWarnings()**:
+
+There are times when the compiler will give us warnings but as programmers we know that our inputs are correct. We are certain that the warning will be produced due to a conscious choice that will not produce erroneous results. In this case, we can wrap the function in *suppressWarnings()*.
+
+
+### Wrap Up & Installing Packages:
+
+We  can import packages in R with the following syntax:
+
+```R
+install.packages("<nameOfPackage")
+```
+
+Once you've installed a package, we can load it into our program using the library() function.
+
+```R
+library(<package name>)
+## Notice that we don't need the quotations now
+```
+
+Now we've come to the end of this course and introduced the basic concepts of R! 

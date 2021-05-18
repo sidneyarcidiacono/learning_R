@@ -53,3 +53,43 @@ Sum <- function(myNumber1, myNumber2)
 
 tryCatch(Sum("a", 1), error = function (e) {print("Objects being added do not have the same data type.")})
 tryCatch(Sum(2, 1), error = function (e) {print("Objects being added do not have the same data type.")})
+
+### Examples of other built-ins for exception handling we can use:
+
+division <- function(myNumber1, myNumber2)
+{
+  if (myNumber2 == 0)
+  {
+    warning("Division by zero")
+  }
+  return (myNumber1 / myNumber2)
+}
+
+# Driver code
+
+division(1, 0)
+division(6, 2)
+
+### If we want to modify our function such that it only returns without errors when neither number is zero:
+
+division <- function(myNumber1, myNumber2)
+{
+  if (myNumber1 == 0 || myNumber2 == 0)
+  {
+    stop("Division by zero.")
+  }
+  return (myNumber1 / myNumber2)
+}
+
+# Driver code:
+
+division(1, 0)
+division(6, 1)
+
+## Look at suppressWarnings() by revisiting our matrix example
+# where the vector length is not a multiple or submultiple of # rows:
+
+myMatrix <- suppressWarnings(matrix(c(1:10), nrow = 4, byrow = TRUE))
+print(myMatrix)
+
+# Here, we know the vector length isn't a submultiple of nrows, but we chose to not show warnings
